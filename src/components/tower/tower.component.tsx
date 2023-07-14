@@ -9,7 +9,7 @@ interface TowerProps {
     selectedDisk: number | null;
 }
 
-const Tower: React.FC<TowerProps> = ({ disks }) => {
+const Tower: React.FC<TowerProps> = ({ disks, onSelectDisk }) => {
     return (
         <>
             <TowerWrapper>
@@ -17,7 +17,9 @@ const Tower: React.FC<TowerProps> = ({ disks }) => {
                     {disks.map((disk, index) => (
                         <Disk
                             key={index}
-                            size={disk} />
+                            size={disk}
+                            onSelectDisk={() => onSelectDisk(disk)}
+                            />
                     ))}
                 </DiskContainer>
             </TowerWrapper>

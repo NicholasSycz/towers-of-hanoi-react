@@ -22,6 +22,7 @@ const Game: React.FC = () => {
     // Handles dragging a disk
     useEffect(() => {
         const handleMouseMove = (event: MouseEvent) => {
+            console.log(event);
             if (selectedDisk !== null) {
                 const draggedDisk = document.getElementById(`disk-${selectedDisk}`);
                 if (draggedDisk) {
@@ -64,6 +65,7 @@ const Game: React.FC = () => {
 
     // Handles selecting a disk
     const handleSelectDisk = (disk: number) => {
+        console.log("disk: ", disk)
         // Check if there is already a selected disk
         if (selectedDisk !== null) {
             setSelectedDisk(null); // Reset the selected disk
